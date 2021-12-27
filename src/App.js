@@ -28,8 +28,8 @@ class App extends React.Component{
     .then(users => this.setState({monsters: users}))
   }
 
-  handleChange = (e) =>{
-    this.setState({searchField: e.target.value})
+  onSearchChange = event =>{
+    this.setState({searchField: event.target.value})
   }
 
   // set state is asyncronous something that takes indefinite amount of time.
@@ -41,7 +41,7 @@ class App extends React.Component{
     return (
           <div className="App">
           <h1> Monsters Rolodex</h1>
-          <SearchBox placeholder="search monsters" handleChange={this.handleChange}/>
+          <SearchBox placeholder="search monsters" onSearchChange={this.handleChange}/>
           <CardList monsters={filteredMonsters}/>
           </div>
         );
